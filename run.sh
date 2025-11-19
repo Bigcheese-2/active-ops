@@ -10,7 +10,7 @@ docker push $DOCKER_USER/active-ops:v1
 
 echo "--- 2. Provisioning AWS EKS Cluster (This takes ~20 mins) ---"
 cd terraform
-
+terraform init
 terraform apply -auto-approve
 
 echo "--- 3. Configuring kubectl ---"
