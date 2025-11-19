@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: active-ops-deployment
+  labels:
+    app: active-ops
+spec:
+  replicas: 2 # Run 2 copies for high availability
+  selector:
+    matchLabels:
+      app: active-ops
+  template:
+    metadata:
+      labels:
+        app: active-ops
+    spec:
+      containers:
+      - name: active-ops
+        # IMPORTANT: Change this to your Docker Hub username!
+        image:  yemishabi/active-ops:v1
+
+        ports:
+        - containerPort: 8080 # The port from your index.js

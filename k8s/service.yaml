@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: active-ops-service
+spec:
+  # This type automatically creates a public-facing AWS Load Balancer
+  type: LoadBalancer 
+  selector:
+    app: active-ops # This must match the 'app' label in your Deployment
+  ports:
+  - protocol: TCP
+    port: 80       # The public port people access
+    targetPort: 8080 # The port on your container (from index.js)
