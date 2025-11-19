@@ -57,7 +57,7 @@ You will also need:
     ```
 
 4.  **Run the Single Launch Command:**
-    This command will build the image, push it, create the cloud infrastructure, deploy the app, and run an automated test.
+    This will download all dependencies terraform needs to run successfully
     ```bash
     ./run.sh
     ```
